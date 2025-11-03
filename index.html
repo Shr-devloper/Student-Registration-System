@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration System</title>
+  <meta name="description" content="Register, manage, and view student records easily with a clean UI and localStorage support.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1> Student Registration System</h1>
+    <p>Register new students, edit details, and manage records — all saved locally on your browser.</p>
+  </header>
+
+  <main class="main-container">
+    <!-- Registration Form -->
+    <section class="form-section glass-card">
+      <h2>Register Student</h2>
+      <form id="studentForm" novalidate>
+        <div class="form-group">
+          <label for="sName">Full Name</label>
+          <input type="text" id="sName" placeholder="e.g. Priya Sharma">
+          <small id="errName" class="error-msg"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="sId">Student ID</label>
+          <input type="text" id="sId" placeholder="e.g. 10234">
+          <small id="errId" class="error-msg"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="sEmail">Email</label>
+          <input type="email" id="sEmail" placeholder="e.g. priya@example.com">
+          <small id="errEmail" class="error-msg"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="sContact">Contact Number</label>
+          <input type="text" id="sContact" placeholder="10-digit contact number">
+          <small id="errContact" class="error-msg"></small>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" id="submitBtn" class="btn primary">Add Student</button>
+          <button type="button" id="resetBtn" class="btn secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Records Display -->
+    <section class="records-section glass-card">
+      <div class="section-header">
+        <h2>Registered Students</h2>
+        <input type="text" id="searchInput" placeholder="Search by name or ID...">
+      </div>
+
+      <div id="tableContainer" class="table-wrapper">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p class="note"> All records are stored locally and won’t disappear after refresh.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Developed by <strong>Shresth Tripathi</strong> | Student Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
